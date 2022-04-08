@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los Trece Algoritmos</title>
+</head>
+
+<script>
+
+console.log("01.-Arreglo 1 a 255 :" + array1a255())
+separa()
+console.log("02.-Suma pares d 1 a 1000 :"+sumapares(1000))
+separa()
+console.log("03.-Suma impares d 1 a 5000 :"+sumaimpares(5000))
+separa()
+console.log("04.-Suma componentes de un arreglo :"+sumaarray([10,20,30,40]))
+separa()
+console.log("05.-Mayor valor del arreglo :"+minMaxProm([-1,1,2,3,-5,-8,7])[1])
+separa()
+console.log("06.-valor promedio del arreglo :"+minMaxProm([-1,1,2,3,-5,-8,7])[2])
+separa()
+console.log("07.-Arreglo de impares :"+arr_odd(50))
+separa()
+console.log("08.-Cantidad mayor a Y :"+cuantosMayoresY([1,3,5,7],3))
+separa()
+console.log("09.-Cuadrados Arreglo " + arregloCuadrado([2,3,4] ))
+separa()
+console.log("10.-Elimina Negativos :" + elimnegativ([-1,1,2,3,-5,-8,7]))
+separa()
+console.log("11.-Min/Max/Avg of array : " + minMaxProm([1,2,3,4,5,6,7]))
+separa()
+console.log("12.-Intercambia primer y ultimo elemento de array:" + intercambiaValores([-1,1,2,3,-5,-8,7]))
+separa()
+console.log("13.-Elimina Negativos :" + elimnegativdojo([-1,1,2,3,-5,-8,7]))
+separa()
+
+
+//función para separar los ejercicios
+function separa(){
+    console.log("*******************************************************************************")
+}
+// Problema 12
+function intercambiaValores(arr){
+    console.log("Arreglo Recibido :"+arr) //Muestra por consola el arreglo
+  let primero = arr[0]
+    arr[0]=arr[arr.length-1]
+    arr[arr.length-1]=primero
+    return arr
+}
+
+// Problema 11
+/* Dado un array con múltiples valores, escribe una función que 
+devuelva un nuevo array que solo contenga el valor 
+mayor (max), menor (min) y promedio (avg) del array original */
+
+function minMaxProm(arr){
+    console.log("Arreglo Recibido :"+arr)
+    //Calcula el mínimo del arreglo
+    let minimo=arr[0];
+    for(let i=0;i<arr.length;i++){
+        let sig=arr[i];
+        if (sig<minimo){
+            minimo=sig;
+        }
+    }
+    //Calcula el máximo
+    let max=arr[0];
+    for(let i=0;i<arr.length;i++){
+        let sig=arr[i];
+        if (sig>max){
+            max=sig;
+        }
+    }
+   
+    // Calcula Promedio
+    let suma=0
+    for(let i=0;i<arr.length;i++){
+        suma=suma+arr[i]
+    }
+    let prom=suma/arr.length
+
+    
+   // arr.forEach((element , idx) => element<min?min=element:null)
+   // arr.forEach((element , idx) => element>max?max=element:null)
+   // arr.forEach((element , idx) => avg=avg+element)
+   //  avg=avg/arr.length
+      
+
+    return [minimo,max,prom.toFixed(2)]
+}
+// Fin Problema 11
+
+
+// 10.- Dado un array con múltiples valores, 
+//escribe una función que reemplace cualquier número negativo dentro del array por 0.
+
+function elimnegativ(arr){
+console.log("Arreglo Recibido :"+arr)    
+for(let i=0;i<arr.length;i++){
+    if (arr[i]<0) {
+        arr[i]=0
+    }
+}
+return arr
+}
+
+//Otra forma
+/*function elimannegativos(arr,valorreemplazo=0){
+    console.log("Arreglo Recibido :"+arr)
+    arr.forEach((element , idx) => element<0?arr[idx]=valorreemplazo:null)
+    return arr
+}*/
+
+
+/* 9.- Cuadrados: Dado un array con múltiples valores, 
+escribe una función que reemplace cada valor por el cuadrado del mismo valor*/
+function arregloCuadrado(arr){
+console.log("Arreglo Recibido :"+arr)
+for (i=0;i<arr.length;i++){
+    arr[i]=Math.pow(arr[i],2)
+}
+return arr
+}
+
+// Otra forma 9.-
+/* function cuadradosarreglo(arr){
+    console.log("Arreglo Recibido :"+arr)
+    arr.forEach((element , idx) => arr[idx] = element**2)
+    return arr
+}*/
+
+//8.- Cuantos elementos del arreglo son mayores que Y
+function cuantosMayoresY(arr,y){
+    console.log("Arreglo Recibido :"+arr+" Y es el número:"+y)
+    let cuantos=0;
+    for (let i = 0; i < arr.length; i++) {
+        let elemento = arr[i];
+        if (elemento>y){
+            cuantos=cuantos+1;
+        }
+    }
+    return cuantos
+}
+
+// Otra forma
+/*function cant_emlent_mayor(base,arr){
+    console.log("Arreglo Recibido :"+arr)
+cant=0
+arr.forEach(element => element>base?cant++:null)
+return cant
+
+}*/
+
+function arr_odd(x){
+    console.log("Arreglo Recibido :"+x)
+let arr=[]
+for(let i = 0;i<=x;i++){
+    if(i%2!=0){
+        arr.push(i)
+    }
+}
+return arr
+}
+
+function array1a255(){
+let arreglo=[]
+for(let i = 1;i<=255;i++){
+   arreglo.push(i)
+}
+return arreglo
+}
+
+function sumapares(x){
+    console.log("Arreglo Recibido :"+x)
+    let tot=0
+for(let i = 1;i<=x;i++){
+    if( i%2==0){
+        tot=tot + i
+    }
+}
+return tot
+}
+
+function sumaimpares(x){
+    console.log("Arreglo Recibido :"+x)
+    let tot=0
+for(let i = 1;i<=x;i++){
+    if(i%2!=0){
+        tot=tot + i
+    }
+}
+return tot
+}
+// 4.- Escribe una función que devuelva la suma de todos los valores dentro de un array 
+//Retorno la suma de todos los elementos de un arreglo
+function sumaarray(arr){
+    console.log("Arreglo Recibido :"+arr)
+   let tot = 0
+    for(let i of arr){
+        tot=tot+i
+   }
+   return tot
+}
+
+// 13.- Escribe una función que tome un array de números y 
+//reemplace cualquier valor negativo por el string 'Dojo'.
+
+function elimnegativdojo(arr){
+console.log("Arreglo Recibido :"+arr)    
+for(let i=0;i<arr.length;i++){
+    if (arr[i]<0) {
+        arr[i]="dojo"
+    }
+}
+return arr
+}
+
+    </script>
+</body>
+</html>

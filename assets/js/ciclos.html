@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+</head>
+<body>
+
+    <script>
+        /*
+        Este es un
+        comentario de
+        muchas lineas.
+        */
+        // alert("Este es mi primera alerta")
+
+        //Este es un boolean
+        let verdad = true;
+        let mentira = false;
+
+        //Esto es un nuemro
+        let numero = 90;
+
+        //Esta variable no esta definida
+        let no_definida;
+
+        //Variable null
+        let nulo = null
+
+        console.log(nulo)
+
+        // Strings
+        let palabras = "Estas son palabras"
+
+
+        var dato1 = "5";
+        var dato2 = "4";
+        dato1 = parseInt(dato1);
+        dato2 = parseInt(dato2);
+
+        // alert(dato1+dato2)
+
+        //Algoritmo Suma de dos numeros
+        //let n1 = prompt("Ingrese un primer numero: ")
+
+        //n1 = parseInt(n1);
+
+        //let n2 = prompt("Ingrese un segundo numero: ")
+        //n2 = parseInt(n2);
+
+        //let suma = n1 + n2;
+        // alert(suma)
+        //document.write("<h1>La suma de los numeros "+ n1 +" y "+n2+" es: "+ suma+"</h1>")
+        //document.write(`<h1> La suma de los numeros ${n1} y ${n2} es ${suma}</h1>`)
+        //Fin algoritmo
+
+        let resto = 16%6;
+        console.log(resto)
+
+        let numUno = 20;
+        let numDos = 2;
+        let numCinco = 5;
+        let numSiete = 7;
+
+        //numUno = numUno *2;
+        numUno *=2;
+        console.log(numUno)
+
+        let division = 1.9;
+        console.log(Math.floor(division))
+
+
+        numDos++;
+        console.log(numDos)
+
+        let sonIguales = numDos === numCinco;
+        let comparar = numCinco < numSiete;
+        // console.log(sonIguales)
+        //console.log(comparar)
+
+        //&& (y)
+        // console.log((9==9)&&(9==8))
+
+        //|| (or)
+        // console.log((9==9)||(9==8))
+
+        // ! negacion
+        console.log(!true)
+
+    let edad = -17;
+
+    if (edad >=18) {
+        console.log("Es mayor de edad")
+    }else if(edad > 0){
+        console.log("Es menor de edad")
+    }
+
+    let mes = 4;
+
+    switch (mes) {
+        case 1:
+            console.log("Enero")
+            break;
+        case 2:
+            console.log("Febrero")
+            break;
+        case 3:
+            console.log("Marzo")
+            break;
+        default:
+            console.log("No se que mes es")
+            break;
+    }
+
+// for(let i=5; i < 10;i++){
+//     console.log(`for desde 5 ${i}`)
+// }
+
+
+    for (let i = 0; i < 10; i++) {
+        console.log(`for ${i}`)
+    }
+
+    let contador = 1;
+
+    while(contador <10){
+        console.log(`while ${contador}`)
+        contador +=2
+    }
+
+
+    let contar = 1;
+    let nombre = "luis"
+    do{
+        console.log(`hola ${nombre}`)
+        var siono = prompt("si o no")
+    }while(siono == "si");
+
+
+    </script>
+    <!-- <script src="/assets/js/mi_script.js"></script> -->
+
+</body>
+</html>

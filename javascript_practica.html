@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+// Una funcion que al darle un numero, este ejecute un console.log avisando si el numero es o no primo
+
+function esPrimo(num){
+    let noPrimo=false
+    for(let i = 2; i < num; i++){
+        if(num % i === 0){
+            noPrimo=true
+        }
+    }
+    if (noPrimo) {
+        console.log(`El numero ${num} no es primo`)
+    } else {
+        console.log(`El numero ${num} es primo`)
+    }
+}
+esPrimo(999337)
+
+
+// Hacer una funcion que al darle una frase y una palabra,
+// La funcion debera buscar en esa frase, la palabra dada y contar las veces que aparece
+// Nos va ejecutar un console.log
+
+function cuantoString(frase, palabra) {
+    let array = frase.split(" ");
+    let contador = 0;
+    for (let i = 0; i < array.length; i++) {
+        if(array[i]=== palabra){
+            contador +=1
+            // contador = contador + 1
+            // contador++
+        }
+    }
+    console.log(`La palabra ${palabra}, esta ${contador} veces en el texto`)
+}
+
+let lorem = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde omnis iste voluptates, maiores quam nostrum voluptate rerum velit neque, suscipit voluptatum minus? Maxime, possimus. ipsum Suscipit, fugit. Error ab accusamus aperiam."
+
+cuantoString(lorem,"ipsum")
+
+// Hacer una funcion que devuelva un array, que nos de cada numero de serie fibonacci
+//-- cada numero es igual a la suma de los dos anteriores
+
+function fibonacci(cantidad) {
+    let numeros=[0,1]
+    for(let i = 2; i < cantidad;i++){
+        numeros.push(numeros[i-1] + numeros[i-2])
+        //numeros[i] = numeros[i-1] + numeros[i-2]
+    }
+    return numeros
+}
+console.log(fibonacci(19))
+
+</script>
+</body>
+</html>

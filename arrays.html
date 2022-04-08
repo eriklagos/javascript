@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const miLista=["uno","dos",3]
+        //reemplazo 3 por 99
+        miLista[2]=99
+
+        document.write(miLista[2]) //imprime el tercer miembro de la pista
+        miLista.pop()
+
+        // recorriendo la lista y los imprime por consola
+        let numeros=[3,6,77,89,34,55,1]
+        for (let i = 0; i < numeros.length; i++) {
+            const elemento = numeros[i];
+            console.log(elemento)
+        }
+
+        //lo recorre todo sin considerar los indices - ocupa todos los indices.
+        let otronumeros=[21,666,777]
+        for (const num of otronumeros) {
+            console.log(num)
+        }
+    </script>
+</body>
+</html>

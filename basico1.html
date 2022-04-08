@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>basicos de javascript</h2>
+    <p></p>
+    <p id="saludo">.....</p>
+    <div id="dat1">
+        Cual es Tu nombre<input type="text" id='Nom' onblur="nom1()"</input>
+    </div>
+    <div id="dat1">
+        Cual es Tu Edad (18-99) <input type="number" Value="18" min="18" max="99" id="Edad" onblur="nom1()"" </input>
+    </div>
+    <div id="dat1">
+        Que Radio Tenia La rueda<input type="number" value="56" min="18" max="99" id="radio" onblur="nom1()"" </input>
+    </div>
+    <div id="dat1">
+        Cuantas hora utilizaste<input type="number" value="2" min="1" max="99" id="horas" onblur="nom1()"" </input>
+    </div>
+    <div id="dat1">
+        El valor hora<input type="number" value="5000" min="1" max="99999" id="vhora" onblur="nom1()"" </input>
+    </div>
+
+
+<script>
+ 
+
+//console.log("variable de fuera bloque " , musica);
+
+function nom1(){
+    let saludo1 = "Hola Mundo"
+    let nom = document.getElementById('Nom').value
+    let tip = ["Joven", "Adulto joven" , "Adulto" ]
+    let edad = document.getElementById('Edad').value
+    let st =""
+    st=tip[2]
+    if (edad<61 && edad>30) {
+        st=tip[1]
+    } else if(edad<31) {
+            st=tip[0] 
+    }
+    let v1=document.getElementById('radio').value
+    rradio = (Math.pow(v1,2)*Math.PI).toFixed(2);
+
+    let txt= saludo1 + " " + st + " " + nom + " El Area del circulo es " + rradio
+    txt=txt + " Tomaste " + document.getElementById('horas').value + " Horas a un valor de "  +  document.getElementById('vhora').value + " Con un costo total de " + (document.getElementById('horas').value  * document.getElementById('vhora').value)
+    document.getElementById('saludo').innerHTML = txt
+}
+</script>
+
+</body>
+</html>
