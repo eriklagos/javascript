@@ -81,7 +81,7 @@
             for (let i = 0; i < array.length; i++) {
                 nuevoarr.push(array[i]*2)
             }
-            document.write("</br>"+"4.- El arreglo ingresado es"+array+" El nuevo arreglo es "+ nuevoarr)
+            document.write("</br>"+"4.- El arreglo ingresado es "+array+" El nuevo arreglo es "+ nuevoarr)
         }
         let arreglito=[2,3,4]
         doble(arreglito)
@@ -126,14 +126,52 @@
                 else{
                     pares++
                     if(pares==3){
-                        document.write("</br>"+"6.- !Es para bien ")
+                        document.write("6.- !Es para bien¡")
                         pares=0
                     } 
                 }
             }
         }
-        let lista=[1,3,9,-6,-7,8]
+        let lista=[1,3,9,6,4,8]
         imparcial(lista)
+
+
+        /*7.- Dado un array de números llamado arr, suma 1 a los elementos,
+        específicamente a aquellos cuyo índice es impar (arr[1], arr[3], arr[5], etc). 
+        Luego, imprime (console.log) cada valor del array y devuelve el arreglo arr. .*/
+        function suma_i_impar(arr) {
+            let tarray=[]
+            for (let i = 0; i < arr.length; i++) {
+                if(i%2!==0){
+                const elemento = arr[i]+1
+                tarray[i]=elemento
+                }
+                else{
+                    tarray[i]=arr[i]
+                }
+            }
+            return console.log("7.- El arreglo recibido es "+ arr+" El nuevo arreglo es "+tarray)
+        }
+        let li=[1,3,9,6,4,8]
+        suma_i_impar(li)
+
+        /*8.- Pasado un array (similar a decir 'tomado un array' o 'dado un array') que contiene strings, 
+        reemplaza cada string con un número de acuerdo cantidad de letras (longitud) del string anterior. 
+        Por ejemplo, longitudesPrevias(["programar","dojo", "genial"]) debería devolver ["programar",9, 4]..*/
+        function previas_long(arr) {
+            let t=[]
+            let cont=0
+            let i=0
+            t[i]=arr[i]
+            for (i = 0; i < arr.length; i++) {
+                palabra=arr[i]
+                cont=palabra.length
+                t[i+1]=cont
+            }
+            return console.log("8.- El arreglo recibido es "+ m+" El nuevo arreglo es "+t)
+        }
+        let m=["programar","dojo", "genial"]
+        previas_long(m)
 
     </script>
     
